@@ -1,0 +1,11 @@
+@import "src/sass/base";
+
+.login-box {
+  padding: 35px;
+  background: white;
+  border-radius: 7px;
+
+  input {
+    background: $light;
+  }
+}
