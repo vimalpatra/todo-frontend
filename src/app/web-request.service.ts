@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class WebRequestService {
+
   readonly ROOT_URL;
 
   constructor(private http: HttpClient) {
@@ -28,29 +29,23 @@ export class WebRequestService {
   }
 
   login(email: string, password: string) {
-    return this.http.post(
-      `${this.ROOT_URL}/users/login`,
-      {
-        email,
-        password
-      },
-      {
-        observe: 'response'
-      }
-    );
+    return this.http.post(`${this.ROOT_URL}/users/login`, {
+      email,
+      password
+    }, {
+      observe: 'response'
+    });
   }
 
   signup(email: string, password: string, sitekey: string) {
-    return this.http.post(
-      `${this.ROOT_URL}/users`,
-      {
-        email,
-        password,
-        sitekey
-      },
-      {
-        observe: 'response'
-      }
-    );
+    return this.http.post(`${this.ROOT_URL}/users`, {
+      email,
+      password,
+      sitekey
+    }, {
+      observe: 'response'
+    });
   }
+
+
 }
